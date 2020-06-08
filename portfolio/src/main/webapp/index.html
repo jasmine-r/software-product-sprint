@@ -1,3 +1,7 @@
+<!-- inspiration for image gallery: 
+     * stanley example provided in week 1 walkthrough
+     * https://www.w3schools.com/css/css_image_gallery.asp --> 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,11 +12,91 @@
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <h1>Jasmine's Portfolio</h1>
+      <p>Hi! I'm Jasmine. I am a Computing Science student, history enthusiast, bookworm and traveller.</p>
+      
+      <div id="profile-links"
+        <p><b><a href="https://www.linkedin.com/in/jasminerai/">LinkedIn</a> | <a href="https://github.com/jasmine-r">GitHub profile</a></b></p>
+      </div>
+
+      <img src="/images/collage.jpg"/>
+
+      <div id="random-quote">  
+        <p class="section-header"><b>Click here to get a random quote:</b></p>
+        <button onclick="addRandomQuote()">Quote time!</button>
+        <div id="quote-container"></div>
+      </div>
+
+      <div id="scenery-gallery">
+          <p class="section-header"><b>Scenic Photos</b><p>
+          <p>I enjoy photographing scenery and picturesque landscapes.</p>
+          
+          <div class="scenic-photo">
+              <a href="images/estonia.jpg"><img src="images/estonia.jpg"></a>
+              <div class="photo-caption">Tallin, Estonia</div>
+          </div> 
+
+          <div class="scenic-photo">
+              <a href="images/barcelona.jpg"><img src="images/barcelona.jpg"></a>
+              <div class="photo-caption">Barcelona</div>
+          </div> 
+
+          <div class="scenic-photo">
+              <a href="images/sunset.jpg"><img src="images/sunset.jpg"></a>
+              <div class="photo-caption">Sunset over the Baltic Sea</div>
+          </div> 
+
+          <div class="scenic-photo">
+              <a href="images/California.jpg"><img src="images/California.jpg"></a>
+              <div class="photo-caption">Palm Desert, California</div>
+          </div> 
+
+           <div class="scenic-photo">
+              <a href="images/rome.jpg"><img src="images/rome.jpg"></a>
+              <div class="photo-caption">Colosseum, Rome</div>
+          </div>
+
+          <div class="scenic-photo">
+              <a href="images/stpetersburg.jpg"><img src="images/stpetersburg.jpg"></a>
+              <div class="photo-caption">Peterhof Palace, St Petersburg</div>
+          </div> 
+
+      </div>
+
+      <div id="projects">
+          <p class="section-header"><b>Projects and Community Engagement</b></p>
+          <ul>
+              <li><b>International Space Settlement Design Competition (ISSDC)</b>: <br>
+              ISSDC is an aerospace engineering competition designed for high school students.  
+              I collaborated with 6 team members on an extra-curricular project where we considered all 
+              the logistics (structural and operational considerations) to design a space settlement on Mars.
+               Our team qualified for the final round of the competition hosted by NASA at the Kennedy Space Center in Florida.
+              </li><br>
+              
+              <li><b>Computer Science Peer Tutoring</b>: <br>
+              I have been volunteering as a Computer Science peer tutor in the Faculty of Applied Sciences at my university. 
+              As part of this role, I'm also involved in promoting STEM outreach and engagement for 
+              students who may be interested in exploring the field.
+              </li><br>
+              
+              <li><b>Wish Youth Network Society</b>: <br>
+              I have volunteered with Wish Youth Network Society (WYNS). 
+              WYNS is a non-profit organization which strives to support youth with serious medical conditions. 
+              </li>
+          </ul>
+      </div>
+
+      <div id="books">
+          <p class="section-header"><b>Books</b></p>
+          <p> Some books that left a lasting impression on me: </p>
+          <ul>
+              <li>The Book Thief by Markus Zusak</li>
+              <li>Atonement by Ian McEwan</li>
+              <li>Pride and Prejudice by Jane Austen</li>
+              <li>Brother by David Chariandy</li>
+              <li>Bitter in the Mouth by Monique Truong</li>
+              <li>Picture of Dorian Gray by Oscar Wilde</li>
+          </ul>
     </div>
   </body>
 </html>
