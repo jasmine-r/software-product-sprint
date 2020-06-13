@@ -27,7 +27,12 @@ img {
     color: black;
 }
 
-
+/* "Hello Jasmine" greeting */
+#greeting-container {
+    margin-top: 20px;
+    font-style: oblique;
+    margin-bottom: 30px;
+}
 /* quote */
 #quote-container {
   margin-top: 20px;
