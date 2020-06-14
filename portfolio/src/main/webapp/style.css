@@ -1,9 +1,89 @@
+body {
+background-color: #f3daf7;
+}
+
+h1 {
+    color: #d41ff2;
+}
+
+p.section-header {
+    color:blueviolet;
+}
+
+img {
+    width:540px; 
+    height: auto;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
 }
 
+#profile-links {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+}
+
+/* "Hello Jasmine" greeting */
 #greeting-container {
+    margin-top: 20px;
+    font-style: oblique;
+    margin-bottom: 30px;
+}
+/* quote */
+#quote-container {
   margin-top: 20px;
+  font-style: oblique;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#random-quote {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+
+/* photo gallery */
+#scenery-gallery {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.scenic-photo {
+    margin: 10px;
+    border: 2px solid lightgrey;
+    float: left;
+    width: 180px;
+}
+
+.scenic-photo img {
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.scenic-photo:hover {
+  border: 2px solid gray;
+}
+
+.photo-caption {
+    padding: 20px;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+/* projects & community engagement */
+#projects {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* books */
+#books {
+    margin-top: 50px;
+    margin-bottom: 30px;
 }

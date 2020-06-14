@@ -12,17 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+/**
+ * Adds a random quote to the page
+ */
+function addRandomQuote() {
+  const quotes =
+      ['"You are never too old to set another goal or to dream a new dream" - C.S. Lewis', 
+      '"The fool doth think he is wise, but the wise man knows himself to be a fool." - Shakespeare', 
+      '"Just keep swimming " - Dory, Finding Nemo', 
+      '"It\'s kind of fun to do the impossible." - Walt Disney',
+      '"Two roads diverged in a wood, and I -- I took the one less traveled by, and that has made all the difference" - Robert Frost'];
+
+  // Pick a random quote.
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
+}
+
+// fetch welcome message from server and add it to DOM
+function getGreeting() {
+  fetch('/data').then(response => response.text()).then((greeting) => {
+    document.getElementById('greeting-container').innerText = greeting;
+  });
 }
