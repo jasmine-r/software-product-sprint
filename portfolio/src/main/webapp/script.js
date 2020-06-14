@@ -32,9 +32,20 @@ function addRandomQuote() {
   quoteContainer.innerText = quote;
 }
 
-// fetch welcome message from server and add it to DOM
-function getGreeting() {
-  fetch('/data').then(response => response.text()).then((greeting) => {
-    document.getElementById('greeting-container').innerText = greeting;
+// fetch JSON data from server
+function getMessages() {
+  fetch('/data').then(response => response.json()).then((messages) => {
+      const messageContainer = document.getElementById('message-container');
+      
+      for (var i = 0; i < messages.length; i++) {
+          messageContainer.appendChild(outputMessage(messages[i]));
+      } 
   });
+}
+
+// Adds/outputs each message to DOM 
+function outputMessage(text) {
+  const messageElement = document.createElement('p');
+  messageElement.innerText = text;
+  return messageElement;
 }

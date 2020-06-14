@@ -14,21 +14,44 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
+    private String greeting = "Hello Jasmine!";
+    private ArrayList<String> messages; 
+    
+    @Override
+    public void init() {
+        messages = new ArrayList<>();
+        messages.add("Hello World!");
+        messages.add("Bonjour le monde!");
+        messages.add("Ciao mondo!");
+    }
+    
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String json = convertToJsonUsingGson(messages);
+        // Send the JSON as the response
+        response.setContentType("application/json;");
+        response.getWriter().println(json);
+    }
 
-private String greeting = "Hello Jasmine!";
-
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println(greeting);
-  }
+    /**
+    * Converts ArrayList of messages into a JSON string using the Gson library.
+    */
+    private String convertToJsonUsingGson(ArrayList<String> messages) {
+        Gson gson = new Gson();
+        String json = gson.toJson(messages);
+        return json;
+    }
 }

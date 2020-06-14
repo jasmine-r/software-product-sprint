@@ -27,8 +27,8 @@ img {
     color: black;
 }
 
-/* "Hello Jasmine" greeting */
-#greeting-container {
+/* hardcoded messages from server */
+#message-container {
     margin-top: 20px;
     font-style: oblique;
     margin-bottom: 30px;
