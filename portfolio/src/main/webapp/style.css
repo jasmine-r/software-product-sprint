@@ -87,3 +87,11 @@ img {
     margin-top: 50px;
     margin-bottom: 30px;
 }
+
+#comments-section {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-style: double;
+    background-color: #f7f5da; 
+}
