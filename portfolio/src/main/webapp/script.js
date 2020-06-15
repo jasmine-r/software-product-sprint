@@ -34,13 +34,42 @@ function addRandomQuote() {
 
 // fetch JSON data from server
 function getMessages() {
-  fetch('/data').then(response => response.json()).then((messages) => {
+  fetch('/data').then(response => response.json()).then((comments) => {
       const messageContainer = document.getElementById('message-container');
       
-      for (var i = 0; i < messages.length; i++) {
-          messageContainer.appendChild(outputMessage(messages[i]));
+      for (var i = 0; i < comments.length; i++) {
+          messageContainer.appendChild(outputMessage(comments[i]));
       } 
   });
+}
+
+function loadComments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+      const commentListElement = document.getElementById('comment-list');
+      
+      comments.forEach((comment) => {
+      commentListElement.appendChild(createCommentElement(comment));
+    })
+  });
+}
+
+/** Creates an element that represents a comment. */
+function createCommentElement(comment) {
+    /*const messageElement = document.createElement('li');
+    messageElement.innerText = comment.comment;
+    return messageElement;*/
+    const messageElement = document.createElement('li');
+    messageElement.className = 'comment';
+    const nameElement = document.createElement('span');
+    nameElement.innerText = comment.name + ": ";
+    const commentElement = document.createElement('p');
+    commentElement.innerText = comment.comment;
+    messageElement.appendChild(nameElement);
+    messageElement.appendChild(commentElement);
+    //const nameElement = document.createElement('span');
+    //nameElement.innerText = comment.name;
+    console.log(messageElement);
+    return messageElement;
 }
 
 // Adds/outputs each message to DOM 

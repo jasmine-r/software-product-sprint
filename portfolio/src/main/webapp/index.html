@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getMessages()">
+  <body onload="loadComments()">
     <div id="content">
       <h1>Jasmine's Portfolio</h1>
       <p>Hi! I'm Jasmine. I am a Computing Science student, history enthusiast, bookworm and traveller.</p>
@@ -99,18 +99,24 @@
           </ul>
     </div>
 
-    <div id="comments-section">
-        <form action="/data" method="POST"> 
-            <p><b>Name:</b></p>
-            <input type="text" name="name-input">
-            <br/>
+    <div id = "comments-section">
+        <div id="add-comment">
+            <form action="/data" method="POST"> 
+                <p><b>Name:</b></p>
+                <input type="text" name="name-input">
+                <br/>
 
-            <p><b>Comment:</b></p>
-            <textarea name="text-input"></textarea>
-            <br/><br/>
-            
-            <input type="submit" />
-        </form>
+                <p><b>Comment:</b></p>
+                <textarea name="text-input"></textarea>
+                <br/><br/>
+                
+                <input type="submit" />
+            </form>
+            <br/>
+        </div>
+        
+        <ul id="comment-list"></ul>
     </div> 
+
   </body>
 </html>

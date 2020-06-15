@@ -14,10 +14,16 @@
 
 package com.google.sps.servlets;
 
+import com.google.sps.data.Comment;
+
 import com.google.gson.Gson;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
+
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,17 +37,25 @@ import java.util.Arrays;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-    private ArrayList<String> comments; 
-
-    @Override
-    public void init(){
-        comments = new ArrayList<>();
-    }
-    
+  
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ArrayList<Comment> comments = new ArrayList<>();
+
+        Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        PreparedQuery results = datastore.prepare(query);
+
+        for (Entity entity : results.asIterable()) {
+            String name = (String) entity.getProperty("name");
+            String comment = (String) entity.getProperty("comment");
+            long timestamp = (long) entity.getProperty("timestamp");
+            
+            Comment newComment = new Comment(name, comment, timestamp);
+            comments.add(newComment);
+        }
+
         String json = convertToJsonUsingGson(comments);
-        // Send the JSON as the response
         response.setContentType("application/json;");
         response.getWriter().println(json);
     }
@@ -68,9 +82,9 @@ public class DataServlet extends HttpServlet {
     /**
     * Converts ArrayList of messages into a JSON string using the Gson library.
     */
-    private String convertToJsonUsingGson(ArrayList<String> messages) {
+    private String convertToJsonUsingGson(ArrayList<Comment> comments) {
         Gson gson = new Gson();
-        String json = gson.toJson(messages);
+        String json = gson.toJson(comments);
         return json;
     }
     

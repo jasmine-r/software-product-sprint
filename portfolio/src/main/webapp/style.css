@@ -35,6 +35,13 @@ img {
   margin-bottom: 30px;
 }
 
+/* message container  */
+#message-container {
+  margin-top: 30px;
+  font-style: oblique;
+  margin-bottom: 30px;
+}
+
 #random-quote {
     margin-top: 40px;
     margin-bottom: 30px;
@@ -79,13 +86,42 @@ img {
 /* books */
 #books {
     margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Comments feature */
+#comments-section {
+    margin-top: 60px;
     margin-bottom: 30px;
 }
 
-#comments-section {
-    margin-top: 50px;
-    margin-bottom: 30px;
+#add-comment, .comment {
     padding: 15px;
     border-style: double;
-    background-color: #f7f5da; 
+    background-color: cornsilk; 
 }
+
+.comment span {
+    font-weight: bold;
+    font-style: oblique;
+    color:rgb(147, 0, 221);
+}
+
+#comment-list {
+  list-style-type: none;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+}
+
+.comment {
+    flex: 1;
+}
+/*
+.comment {
+  border: thin solid black;
+  border-style: double;
+  padding: 15px;
+  background-color: #f7f5da; 
+}*/
+
