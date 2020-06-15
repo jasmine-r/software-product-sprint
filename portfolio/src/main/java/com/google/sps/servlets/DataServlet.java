@@ -15,6 +15,9 @@
 package com.google.sps.servlets;
 
 import com.google.gson.Gson;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,10 +48,20 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // retrieve comment from the form, add to list of comments
+        // retrieve comment-related data from the form
+        String name = getParameter(request, "name-input", "");
         String comment = getParameter(request, "text-input", "");
-        comments.add(comment);
-        
+        long timestamp = System.currentTimeMillis();
+
+        //comments.add(comment);
+        Entity commentEntity = new Entity("Comment");
+        commentEntity.setProperty("name", name);
+        commentEntity.setProperty("comment", comment);
+        commentEntity.setProperty("timestamp", timestamp);
+
+        // store comment 
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        datastore.put(commentEntity);
         response.sendRedirect("/index.html");
     }
 
