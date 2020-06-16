@@ -1,14 +1,123 @@
-body {
-background-color: #f3daf7;
+#header-panel {
+    background: white; /*#d7f2f0; /*#1abc9c; */
+    padding: 60px;
+    text-align: right;
 }
 
-h1 {
-    color: #d41ff2;
+#index-content {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Karma";
+    align-items: center;
+    justify-content: center;
+}
+
+#intro-panel {
+    display: flex;
+}
+
+#collage {
+    float: left;  
+    background: mediumseagreen;/*#d4fcd7; */
+    width: 40%; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#collage img {
+    padding: 20px;
+    width:450px; 
+    height: auto;
+}
+
+#intro {
+    float: right;  
+    background: gainsboro; 
+    width: 60%; 
+    padding: 20px;
+    font-size: 12pt;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+#description {
+    text-align: center; 
+    font-size: 14pt;
+}
+
+#interests {
+    background: #e8e8e8;/*#d7f2f0;*/
+    width: fit-content;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#interest-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#circle {
+    border-radius: 50%;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    background: mediumseagreen;
+    justify-content: center;
+    align-items: center;
+}
+
+.interest-elem {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px; 
+}
+
+.interests-header {
+    text-align: center;
+    color:mediumseagreen;
+    font-size: large;
+}
+
+.interest-cols {
+    list-style-type: none;
+    column-count: 4;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+body {
+    background: white; 
+}
+
+.collage {
+    max-width:100%;
+    max-height:100%;
+    /*width:540px; 
+    height: auto;*/
+}
+
+.title {
+    color: black;/*mediumseagreen; #d41ff2*/;
     font-family: 'Kaushan Script', cursive;
+    /*-webkit-text-stroke: 1px #d41ff2 ;*/
+    font-size: 50pt;  
 }
 
 p.section-header {
-    color:blueviolet;
+    color:#d41ff2;
+    font-size: 1.5em;
 }
 
 img {
@@ -19,7 +128,10 @@ img {
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  display: flex;
+  background: lightskyblue;
+  align-items: center;
+  justify-content: center;
 }
 
 #profile-links {
@@ -28,12 +140,28 @@ img {
     color: black;
 }
 
+.button {
+    border-radius: 25pt;
+    background: mediumslateblue;
+}
+
 /* quote */
 #quote-container {
   margin-top: 20px;
   font-style: oblique;
   font-weight: bold;
   margin-bottom: 30px;
+  font-size: larger;
+}
+
+#random-quote {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: white;
 }
 
 /* message container  */
@@ -43,16 +171,9 @@ img {
   margin-bottom: 30px;
 }
 
-#random-quote {
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-
 /* photo gallery */
 #scenery-gallery {
-    padding-top: 40px;
-    padding-bottom: 60px;
+    padding: 10px;
 }
 
 .scenic-photo {
@@ -75,11 +196,12 @@ img {
 .photo-caption {
     padding: 20px;
     text-align: center;
-    background-color: cornsilk;
+    background-color: #fff8dc;
 }
 
 /* projects & community engagement */
 #projects {
+    padding-top: 10px;
     margin-top: 50px;
     margin-bottom: 30px;
 }
@@ -92,14 +214,42 @@ img {
 
 /* Comments feature */
 #comments-section {
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin: auto;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    display: table;
+    
 }
 
-#add-comment, .comment {
+#add-comment {
     padding: 15px;
+    width: 360px;
+    height: 320px;
     border-style: double;
-    background-color: cornsilk; 
+    background-color: #fff8f0; 
+    text-align: center;
+    align-content: center;
+}
+
+.comment {
+    padding: 15px;
+    width: 360px;
+    height: auto;
+    border-style: double;
+    background-color: #fff8f0; 
+    text-align: center;
+    align-content: center;
+}
+
+.input-text{
+    width: 240px;
+}
+
+textarea {
+    resize: none;
+    width: 240px;
+    height: 100px;
 }
 
 .comment span {
@@ -117,4 +267,48 @@ img {
 
 .comment {
     flex: 1;
+}
+
+/* nav bar */
+
+#navigation {
+    text-align: left;
+}
+
+#navigation span {
+    font-size: 25px; 
+    cursor: pointer;
+}
+.side-nav-bar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+}
+
+.side-nav-bar a {
+  display: block;
+  padding: 10px 10px 10px 30px;
+  font-size: 25px;
+  color: gray;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.side-nav-bar a:hover {
+  color: white;
+}
+
+.side-nav-bar .close-button {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 40px;
+  margin-left: 50px;
 }

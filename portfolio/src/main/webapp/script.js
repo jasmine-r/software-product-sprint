@@ -78,3 +78,14 @@ function outputMessage(text) {
   messageElement.innerText = text;
   return messageElement;
 }
+
+/* expand and minimize side navigation bar */
+function expandNavBar() {
+  document.getElementById("nav-bar").style.width = "250px";
+  document.getElementById("content").style.marginLeft = "250px";
+}
+
+function minimizeNavBar() {
+  document.getElementById("nav-bar").style.width = "0";
+  document.getElementById("content").style.marginLeft= "0";
+}
