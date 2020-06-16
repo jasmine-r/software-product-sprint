@@ -4,6 +4,17 @@
     text-align: right;
 }
 
+body {
+    background: white; 
+}
+
+.title {
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    /*-webkit-text-stroke: 1px #d41ff2 ;*/
+    font-size: 50pt;  
+}
+
 #index-content {
     margin-left: auto;
     margin-right: auto;
@@ -31,6 +42,7 @@
     height: auto;
 }
 
+/* first panel */
 #intro {
     float: right;  
     background: gainsboro; 
@@ -96,33 +108,11 @@
     justify-content: center;
     vertical-align: middle;
 }
-
-body {
-    background: white; 
-}
-
-.collage {
-    max-width:100%;
-    max-height:100%;
-    /*width:540px; 
-    height: auto;*/
-}
-
-.title {
-    color: black;/*mediumseagreen; #d41ff2*/;
-    font-family: 'Kaushan Script', cursive;
-    /*-webkit-text-stroke: 1px #d41ff2 ;*/
-    font-size: 50pt;  
-}
+/* -- end first panel -- */
 
 p.section-header {
     color:#d41ff2;
     font-size: 1.5em;
-}
-
-img {
-    width:540px; 
-    height: auto;
 }
 
 #content {
@@ -174,6 +164,11 @@ img {
 /* photo gallery */
 #scenery-gallery {
     padding: 10px;
+}
+
+img {
+    width:540px; 
+    height: auto;
 }
 
 .scenic-photo {
@@ -270,7 +265,6 @@ textarea {
 }
 
 /* nav bar */
-
 #navigation {
     text-align: left;
 }
@@ -279,6 +273,7 @@ textarea {
     font-size: 25px; 
     cursor: pointer;
 }
+
 .side-nav-bar {
   height: 100%;
   width: 0;
