@@ -122,6 +122,7 @@ p.section-header {
   background: #b1d6b8;
   align-items: center;
   justify-content: center;
+  font-family: "Karma";
 }
 
 #profile-links {
@@ -196,15 +197,39 @@ img {
 
 /* projects & community engagement */
 #projects {
-    padding-top: 10px;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin: 30px;
 }
 
 /* books */
 #books {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.book-elem {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 170px; 
+}
+
+.book-cols {
+    list-style-type: none;
+    column-count: 6;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+#rounded_elem {
+    border-radius: 50%;
+    display: flex;
+    height: 170px;
+    width: 170px;
+    margin-right: 10px;
+    background: mediumseagreen;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Comments feature */
