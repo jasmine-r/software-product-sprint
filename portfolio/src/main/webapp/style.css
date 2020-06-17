@@ -111,7 +111,7 @@ body {
 /* -- end first panel -- */
 
 p.section-header {
-    color:#d41ff2;
+    color:mediumseagreen;
     font-size: 1.5em;
 }
 
@@ -119,7 +119,7 @@ p.section-header {
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  background: lightskyblue;
+  background: lightcyan;
   align-items: center;
   justify-content: center;
 }
