@@ -1,5 +1,5 @@
 #header-panel {
-    background: white; /*#d7f2f0; /*#1abc9c; */
+    background: white; 
     padding: 15px;
     text-align: right;
 }
@@ -11,7 +11,7 @@ body {
 .title {
     color: black;
     font-family: 'Kaushan Script', cursive;
-    /*-webkit-text-stroke: 1px #d41ff2 ;*/
+    -webkit-text-stroke: 0.1px mediumseagreen;
     font-size: 50pt;  
 }
 
@@ -29,7 +29,7 @@ body {
 
 #collage {
     float: left;  
-    background: mediumseagreen;/*#d4fcd7; */
+    background: mediumseagreen;
     width: 40%; 
     text-align: center;
     align-items: center;
