@@ -32,9 +32,60 @@ function addRandomQuote() {
   quoteContainer.innerText = quote;
 }
 
-// fetch welcome message from server and add it to DOM
-function getGreeting() {
-  fetch('/data').then(response => response.text()).then((greeting) => {
-    document.getElementById('greeting-container').innerText = greeting;
+// fetch JSON data from server
+function getMessages() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+      const messageContainer = document.getElementById('message-container');
+      
+      for (var i = 0; i < comments.length; i++) {
+          messageContainer.appendChild(outputMessage(comments[i]));
+      } 
   });
+}
+
+function loadComments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+      const commentListElement = document.getElementById('comment-list');
+      
+      comments.forEach((comment) => {
+      commentListElement.appendChild(createCommentElement(comment));
+    })
+  });
+}
+
+/** Creates an element that represents a comment. */
+function createCommentElement(comment) {
+    /*const messageElement = document.createElement('li');
+    messageElement.innerText = comment.comment;
+    return messageElement;*/
+    const messageElement = document.createElement('li');
+    messageElement.className = 'comment';
+    const nameElement = document.createElement('span');
+    nameElement.innerText = comment.name + ": ";
+    const commentElement = document.createElement('p');
+    commentElement.innerText = comment.comment;
+    messageElement.appendChild(nameElement);
+    messageElement.appendChild(commentElement);
+    //const nameElement = document.createElement('span');
+    //nameElement.innerText = comment.name;
+    console.log(messageElement);
+    return messageElement;
+}
+
+// Adds/outputs each message to DOM 
+function outputMessage(text) {
+  const messageElement = document.createElement('p');
+  messageElement.innerText = text;
+  return messageElement;
+}
+
+/* expand and minimize side navigation bar */
+function expandNavBar() {
+  document.getElementById("nav-bar").style.width = "250px";
+  document.getElementById("content").style.marginLeft = "250px";
+}
+
+function minimizeNavBar() {
+  document.getElementById("nav-bar").style.width = "0";
+  document.getElementById("content").style.marginLeft= "0";
 }

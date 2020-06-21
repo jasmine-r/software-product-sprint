@@ -8,23 +8,105 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getGreeting()">
+  <body onload="loadComments()">
+
+    <div id="nav-bar" class="side-nav-bar">
+        <a href="#" class="close-button" onclick="minimizeNavBar()"> &times; </a>
+        <a href="index.html"><i class="fa fa-home"></i> Home</a>
+        <a href="#"><i class="fa fa-group"></i> Projects & Community Engagement</a>
+        <a href="#"><i class="fa fa-photo"></i> Photo Gallery</a>
+        <a href="#"><i class="fa fa-book"></i> Books</a>
+    </div>
+
+    <div id="header-panel">
+        <div id="navigation">
+            <span onclick="expandNavBar()"> &#9776; </span>
+        </div>
+        <div id="header">
+            <h1 class="title">Jasmine's Portfolio</h1>
+        </div>
+    </div>
+
+    <div id="index-content">
+        <div id="intro-panel">
+            <div id="collage">
+                <img src="/images/collage.jpg"/>
+            </div>
+            <div id="intro">
+                <br/>
+                <p id="description">Hi! I'm Jasmine. <br/> I am a Computing Science student, history enthusiast, bookworm and traveller.</p>
+                <div id="profile-links">
+                    <p><b><a href="https://www.linkedin.com/in/jasminerai/">LinkedIn</a> | <a href="https://github.com/jasmine-r">GitHub profile</a></b></p>
+                </div>
+                <br/><br/>
+                <p class="interests-header"><b> Interests </b></p>
+                <div id="interest-container">
+                <ul class="interest-cols" data-columns="4">
+                    <div id="circle">
+                        <li class="interest_elem"><i class="fa fa-book"></i> Reading</li>
+                    </div>
+                    <div id="circle">
+                        <li class="interest_elem"><i class="fa fa-pencil"></i> Writing</li>
+                    </div>
+                    <div id="circle">
+                        <li class="interest_elem"><i class="fa fa-plane"></i> Travel</li>
+                    </div>
+                    <div id="circle">
+                        <li class="interest_elem"><i class="fa fa-leaf"></i> Gardening</li>
+                    </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div id="random-quote">
+            <p><b>Click here to get a random quote:</b></p>
+            <button class="button" onclick="addRandomQuote()">Quote time!</button>
+            <div id="quote-container"></div>
+        </div>
+
+        <div id = "comments-section">
+            <div id="add-comment">
+                <form action="/data" method="POST"> 
+                    <p class="form-prompt"><b>Name:</b></p>
+                    <input class="input-text" type="text" name="name-input">
+                    <br/><br/>
+
+                    <p class="form-prompt"><b>Comment:</b></p>
+                    <textarea name="text-input"></textarea>
+                    <br/><br/>
+                    
+                    <input class="button" type="submit" />
+                </form>
+                <br/> 
+            </div>
+            
+            <ul id="comment-list"></ul>
+        </div>
+
+    </div>
+
+    <br/><br/><br/>
+
+    <!-- TODO: need to move content below to their corresponding pages */ -->
+    
+    <!--
     <div id="content">
-      <h1>Jasmine's Portfolio</h1>
       <p>Hi! I'm Jasmine. I am a Computing Science student, history enthusiast, bookworm and traveller.</p>
       
       <div id="profile-links"
         <p><b><a href="https://www.linkedin.com/in/jasminerai/">LinkedIn</a> | <a href="https://github.com/jasmine-r">GitHub profile</a></b></p>
       </div>
 
-      <div id="greeting-container"></div>
-
       <img src="/images/collage.jpg"/>
 
       <div id="random-quote">  
-        <p class="section-header"><b>Click here to get a random quote:</b></p>
+        <p><b>Click here to get a random quote:</b></p>
         <button onclick="addRandomQuote()">Quote time!</button>
         <div id="quote-container"></div>
       </div>
@@ -62,8 +144,9 @@
               <a href="images/stpetersburg.jpg"><img src="images/stpetersburg.jpg"></a>
               <div class="photo-caption">Peterhof Palace, St Petersburg</div>
           </div> 
-
       </div>
+
+      <br/><br/>
 
       <div id="projects">
           <p class="section-header"><b>Projects and Community Engagement</b></p>
@@ -100,5 +183,26 @@
               <li>Picture of Dorian Gray by Oscar Wilde</li>
           </ul>
     </div>
+
+    <div id = "comments-section">
+        <div id="add-comment">
+            <form action="/data" method="POST"> 
+                <p><b>Name:</b></p>
+                <input type="text" name="name-input">
+                <br/>
+
+                <p><b>Comment:</b></p>
+                <textarea name="text-input"></textarea>
+                <br/><br/>
+                
+                <input type="submit" />
+            </form>
+            <br/>
+        </div>
+        
+        <ul id="comment-list"></ul>
+    </div> 
+    -->
+
   </body>
 </html>

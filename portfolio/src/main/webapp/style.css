@@ -1,24 +1,127 @@
-body {
-background-color: #f3daf7;
+#header-panel {
+    background: white; 
+    padding: 15px;
+    text-align: right;
 }
 
-h1 {
-    color: #d41ff2;
+body {
+    background: white; 
 }
+
+.title {
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    -webkit-text-stroke: 0.1px mediumseagreen;
+    font-size: 50pt;  
+}
+
+#index-content {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Karma";
+    align-items: center;
+    justify-content: center;
+}
+
+#intro-panel {
+    display: flex;
+}
+
+#collage {
+    float: left;  
+    background: mediumseagreen;
+    width: 40%; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#collage img {
+    padding: 20px;
+    width:450px; 
+    height: auto;
+}
+
+/* first panel */
+#intro {
+    float: right;  
+    background: gainsboro; 
+    width: 60%; 
+    padding: 20px;
+    font-size: 12pt;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+#description {
+    text-align: center; 
+    font-size: 14pt;
+}
+
+#interests {
+    background: #e8e8e8;/*#d7f2f0;*/
+    width: fit-content;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#interest-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#circle {
+    border-radius: 50%;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    background: mediumseagreen;
+    justify-content: center;
+    align-items: center;
+}
+
+.interest-elem {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px; 
+}
+
+.interests-header {
+    text-align: center;
+    color:mediumseagreen;
+    font-size: large;
+}
+
+.interest-cols {
+    list-style-type: none;
+    column-count: 4;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+/* -- end first panel -- */
 
 p.section-header {
-    color:blueviolet;
-}
-
-img {
-    width:540px; 
-    height: auto;
+    color:#d41ff2;
+    font-size: 1.5em;
 }
 
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  display: flex;
+  background: lightskyblue;
+  align-items: center;
+  justify-content: center;
 }
 
 #profile-links {
@@ -27,30 +130,45 @@ img {
     color: black;
 }
 
-/* "Hello Jasmine" greeting */
-#greeting-container {
-    margin-top: 20px;
-    font-style: oblique;
-    margin-bottom: 30px;
+.button {
+    border-radius: 25pt;
+    background: mediumslateblue;
 }
+
 /* quote */
 #quote-container {
   margin-top: 20px;
   font-style: oblique;
   font-weight: bold;
   margin-bottom: 30px;
+  font-size: larger;
 }
 
 #random-quote {
     margin-top: 40px;
     margin-bottom: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: white;
 }
 
+/* message container  */
+#message-container {
+  margin-top: 30px;
+  font-style: oblique;
+  margin-bottom: 30px;
+}
 
 /* photo gallery */
 #scenery-gallery {
-    padding-top: 40px;
-    padding-bottom: 60px;
+    padding: 10px;
+}
+
+img {
+    width:540px; 
+    height: auto;
 }
 
 .scenic-photo {
@@ -73,11 +191,12 @@ img {
 .photo-caption {
     padding: 20px;
     text-align: center;
-    background-color: cornsilk;
+    background-color: #fff8dc;
 }
 
 /* projects & community engagement */
 #projects {
+    padding-top: 10px;
     margin-top: 50px;
     margin-bottom: 30px;
 }
@@ -85,5 +204,106 @@ img {
 /* books */
 #books {
     margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+/* Comments feature */
+#comments-section {
+    margin: auto;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    display: table;
+    
+}
+
+#add-comment {
+    padding: 15px;
+    width: 360px;
+    height: 320px;
+    border-style: double;
+    background-color: #fff8f0; 
+    text-align: center;
+    align-content: center;
+}
+
+.comment {
+    padding: 15px;
+    width: 360px;
+    height: auto;
+    border-style: double;
+    background-color: #fff8f0; 
+    text-align: center;
+    align-content: center;
+}
+
+.input-text{
+    width: 240px;
+}
+
+textarea {
+    resize: none;
+    width: 240px;
+    height: 100px;
+}
+
+.comment span {
+    font-weight: bold;
+    font-style: oblique;
+    color:rgb(147, 0, 221);
+}
+
+#comment-list {
+  list-style-type: none;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+}
+
+.comment {
+    flex: 1;
+}
+
+/* nav bar */
+#navigation {
+    text-align: left;
+}
+
+#navigation span {
+    font-size: 25px; 
+    cursor: pointer;
+}
+
+.side-nav-bar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+}
+
+.side-nav-bar a {
+  display: block;
+  padding: 10px 10px 10px 30px;
+  font-size: 25px;
+  color: gray;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.side-nav-bar a:hover {
+  color: white;
+}
+
+.side-nav-bar .close-button {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 40px;
+  margin-left: 50px;
 }
