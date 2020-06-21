@@ -123,6 +123,7 @@ p.section-header {
   align-items: center;
   justify-content: center;
   font-family: "Karma";
+  padding: 15px;
 }
 
 #profile-links {
@@ -287,6 +288,13 @@ textarea {
 
 .comment {
     flex: 1;
+}
+
+/* map */
+#map {
+  border: thin solid black;
+  height: 500px;
+  width: 500px;
 }
 
 /* nav bar */

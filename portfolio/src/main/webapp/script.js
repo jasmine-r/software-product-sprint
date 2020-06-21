@@ -89,3 +89,9 @@ function minimizeNavBar() {
   document.getElementById("nav-bar").style.width = "0";
   document.getElementById("content").style.marginLeft= "0";
 }
+
+/** Create map and add it to the page. */
+function initMap() {
+  const map = new google.maps.Map(document.getElementById('map'),
+      {center: {lat: 49.2827, lng: -123.1207}, zoom: 5});
+}

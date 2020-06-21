@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYP0C-GVuSrJCpcE-eEFLU6yAafw5Tqb8"></script>
     <script src="script.js"></script>
   </head>
-  <body onload="loadComments()">
-
+  <body onload="initMap();">
     <div id="nav-bar" class="side-nav-bar">
         <a href="#" class="close-button" onclick="minimizeNavBar()"> &times; </a>
         <a href="index.html"><i class="fa fa-home"></i> Home</a>
@@ -20,7 +20,7 @@
     </div>
 
     <div id="header-panel">
-        <div id="navigation">
+                <div id="navigation">
             <span onclick="expandNavBar()"> &#9776; </span>
         </div>
         <div id="header">
@@ -29,30 +29,7 @@
     </div>
 
     <div id="content">
-        <div id="books">
-          <p class="section-header"><b>Books</b></p>
-          <p> Some books that left a lasting impression on me: </p>
-          <ul class="book-cols" data-columns="6">
-            <div id="rounded_elem">
-                <li class="book_elem">The Book Thief<br/>by Markus Zusak</li>
-            </div>
-            <div id="rounded_elem">
-                <li class="book_elem">Atonement<br/>by Ian McEwan</li>
-            </div>
-            <div id="rounded_elem">
-                <li class="book_elem">Pride and Prejudice<br/>by Jane Austen</li>
-            </div>
-            <div id="rounded_elem">
-                <li class="book_elem">Brother<br/>by David Chariandy</li>
-            </div>
-            <div id="rounded_elem">
-                <li class="book_elem">Bitter in the Mouth<br/>by Monique Truong</li>
-            </div>
-            <div id="rounded_elem">
-                <li class="book_elem">Picture of Dorian Gray<br/>by Oscar Wilde</li>
-            </div>
-          </ul>
-        </div>
+        <div id="map"></div>
     </div>
     <br/><br/><br/>
   </body>
