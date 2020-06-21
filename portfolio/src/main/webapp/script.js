@@ -93,5 +93,28 @@ function minimizeNavBar() {
 /** Create map and add it to the page. */
 function initMap() {
   const map = new google.maps.Map(document.getElementById('map'),
-      {center: {lat: 49.2827, lng: -123.1207}, zoom: 5});
+      {center: {lat: 49.2827, lng: -123.1207}, zoom: 0});
+  setMarkers(map);
 }
+
+/* locations currently hardcoded -- TODO: revisit this*/
+var locations = [
+    ['Amsterdam', 52.3791, 4.89943],
+    ['Barcelona', 41.3902, 2.154],
+    ['Berlin', 52.52, 13.405],
+    ['Bruges', 51.2093, 3.2247],
+    ['Copenhagen', 55.6761, 12.5683]
+];
+
+// add markers for locations on the map
+function setMarkers(map){
+    for (var i = 0; i < locations.length; i++) {
+        var location = locations[i];
+        var locationMarker = new google.maps.Marker({
+            position: {lat: location[1], lng: location[2]},
+            map: map,
+            title: location[0]
+        });
+    }
+}
+
