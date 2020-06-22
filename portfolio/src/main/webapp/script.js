@@ -90,7 +90,7 @@ function initMap() {
   fetch('/travel').then(response => response.json()).then((locations) => {
     const map = new google.maps.Map(
           document.getElementById('map'),
-          {center: {lat: 49.2827, lng: -123.1207}, zoom: 0});
+          {center: {lat: 14.5994, lng: -28.67}, zoom: 2});
     setLandmarks(map, locations);
   });
 }
