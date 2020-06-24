@@ -55,9 +55,6 @@ function loadComments() {
 
 /** Creates an element that represents a comment. */
 function createCommentElement(comment) {
-    /*const messageElement = document.createElement('li');
-    messageElement.innerText = comment.comment;
-    return messageElement;*/
     const messageElement = document.createElement('li');
     messageElement.className = 'comment';
     const nameElement = document.createElement('span');
@@ -66,8 +63,6 @@ function createCommentElement(comment) {
     commentElement.innerText = comment.comment;
     messageElement.appendChild(nameElement);
     messageElement.appendChild(commentElement);
-    //const nameElement = document.createElement('span');
-    //nameElement.innerText = comment.name;
     console.log(messageElement);
     return messageElement;
 }
@@ -89,3 +84,34 @@ function minimizeNavBar() {
   document.getElementById("nav-bar").style.width = "0";
   document.getElementById("content").style.marginLeft= "0";
 }
+
+/** Create map and add it to the page. */
+function initMap() {
+  fetch('/travel').then(response => response.json()).then((locations) => {
+    const map = new google.maps.Map(
+          document.getElementById('map'),
+          {center: {lat: 14.5994, lng: -28.67}, zoom: 2});
+    setLandmarks(map, locations);
+  });
+}
+
+/* set markers for locations on the map
+   and add info window for each marker */
+function setLandmarks(map, locations) {
+    locations.forEach((location) => {
+        const locationMarker = new google.maps.Marker({
+           position: {lat: location.latitude, lng: location.longitude}, 
+           map: map,
+           title: location.city
+        });
+
+        // add info window containing a picture if image src is specified
+        if(location.image) {
+            const infoWindow = new google.maps.InfoWindow({content: location.image});
+            locationMarker.addListener('click', () => {
+                infoWindow.open(map, locationMarker);
+            });
+        }
+    });
+}
+

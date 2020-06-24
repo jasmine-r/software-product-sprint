@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYP0C-GVuSrJCpcE-eEFLU6yAafw5Tqb8"></script>
+    <script src="script.js"></script>
+  </head>
+  <body onload="initMap();">
+    <div id="nav-bar" class="side-nav-bar">
+        <a href="#" class="close-button" onclick="minimizeNavBar()"> &times; </a>
+        <a href="index.html"><i class="fa fa-home"></i> Home</a>
+        <a href="projects.html"><i class="fa fa-group"></i> Projects & Community Engagement</a>
+        <a href="books.html"><i class="fa fa-book"></i> Books</a>
+        <a href="travel.html"><i class="fa fa-plane"></i> Travel</a>
+    </div>
+
+    <div id="header-panel">
+                <div id="navigation">
+            <span onclick="expandNavBar()"> &#9776; </span>
+        </div>
+        <div id="header">
+            <h1 class="title">Jasmine's Portfolio</h1>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="map"></div>
+    </div>
+    <br/><br/><br/>
+  </body>
+</html>

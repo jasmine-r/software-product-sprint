@@ -18,9 +18,9 @@
     <div id="nav-bar" class="side-nav-bar">
         <a href="#" class="close-button" onclick="minimizeNavBar()"> &times; </a>
         <a href="index.html"><i class="fa fa-home"></i> Home</a>
-        <a href="#"><i class="fa fa-group"></i> Projects & Community Engagement</a>
-        <a href="#"><i class="fa fa-photo"></i> Photo Gallery</a>
-        <a href="#"><i class="fa fa-book"></i> Books</a>
+        <a href="projects.html"><i class="fa fa-group"></i> Projects & Community Engagement</a>
+        <a href="books.html"><i class="fa fa-book"></i> Books</a>
+        <a href="travel.html"><i class="fa fa-plane"></i> Travel</a>
     </div>
 
     <div id="header-panel">
@@ -46,21 +46,21 @@
                 <br/><br/>
                 <p class="interests-header"><b> Interests </b></p>
                 <div id="interest-container">
-                <ul class="interest-cols" data-columns="4">
-                    <div id="circle">
-                        <li class="interest_elem"><i class="fa fa-book"></i> Reading</li>
-                    </div>
-                    <div id="circle">
-                        <li class="interest_elem"><i class="fa fa-pencil"></i> Writing</li>
-                    </div>
-                    <div id="circle">
-                        <li class="interest_elem"><i class="fa fa-plane"></i> Travel</li>
-                    </div>
-                    <div id="circle">
-                        <li class="interest_elem"><i class="fa fa-leaf"></i> Gardening</li>
-                    </div>
-                    </div>
-                </ul>
+                    <ul class="interest-cols" data-columns="4">
+                        <div id="circle">
+                            <li class="interest_elem"><i class="fa fa-book"></i> Reading</li>
+                        </div>
+                        <div id="circle">
+                            <li class="interest_elem"><i class="fa fa-pencil"></i> Writing</li>
+                        </div>
+                        <div id="circle">
+                            <li class="interest_elem"><i class="fa fa-plane"></i> Travel</li>
+                        </div>
+                        <div id="circle">
+                            <li class="interest_elem"><i class="fa fa-leaf"></i> Gardening</li>
+                        </div>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -69,6 +69,45 @@
             <button class="button" onclick="addRandomQuote()">Quote time!</button>
             <div id="quote-container"></div>
         </div>
+
+        <div id="content">
+            <div id="scenery-gallery">
+                <p class="section-header"><b>Scenic Photos</b><p>
+                <p>I enjoy photographing scenery and picturesque landscapes.</p>
+                
+                <div class="scenic-photo">
+                    <a href="images/estonia.jpg"><img src="images/estonia.jpg"></a>
+                    <div class="photo-caption">Tallin, Estonia</div>
+                </div> 
+
+                <div class="scenic-photo">
+                    <a href="images/barcelona.jpg"><img src="images/barcelona.jpg"></a>
+                    <div class="photo-caption">Barcelona</div>
+                </div> 
+
+                <div class="scenic-photo">
+                    <a href="images/sunset.jpg"><img src="images/sunset.jpg"></a>
+                    <div class="photo-caption">Sunset over the Baltic Sea</div>
+                </div> 
+                <br/>
+                <div class="scenic-photo">
+                    <a href="images/California.jpg"><img src="images/California.jpg"></a>
+                    <div class="photo-caption">Palm Desert, California</div>
+                </div> 
+
+                <div class="scenic-photo">
+                    <a href="images/rome.jpg"><img src="images/rome.jpg"></a>
+                    <div class="photo-caption">Colosseum, Rome</div>
+                </div>
+
+                <div class="scenic-photo">
+                    <a href="images/stpetersburg.jpg"><img src="images/stpetersburg.jpg"></a>
+                    <div class="photo-caption">Peterhof Palace, St Petersburg</div>
+                </div> 
+            </div>
+        </div>
+
+      <br/><br/>
 
         <div id = "comments-section">
             <div id="add-comment">
@@ -94,60 +133,9 @@
     <br/><br/><br/>
 
     <!-- TODO: need to move content below to their corresponding pages */ -->
-    
+
     <!--
-    <div id="content">
-      <p>Hi! I'm Jasmine. I am a Computing Science student, history enthusiast, bookworm and traveller.</p>
-      
-      <div id="profile-links"
-        <p><b><a href="https://www.linkedin.com/in/jasminerai/">LinkedIn</a> | <a href="https://github.com/jasmine-r">GitHub profile</a></b></p>
-      </div>
-
-      <img src="/images/collage.jpg"/>
-
-      <div id="random-quote">  
-        <p><b>Click here to get a random quote:</b></p>
-        <button onclick="addRandomQuote()">Quote time!</button>
-        <div id="quote-container"></div>
-      </div>
-
-      <div id="scenery-gallery">
-          <p class="section-header"><b>Scenic Photos</b><p>
-          <p>I enjoy photographing scenery and picturesque landscapes.</p>
-          
-          <div class="scenic-photo">
-              <a href="images/estonia.jpg"><img src="images/estonia.jpg"></a>
-              <div class="photo-caption">Tallin, Estonia</div>
-          </div> 
-
-          <div class="scenic-photo">
-              <a href="images/barcelona.jpg"><img src="images/barcelona.jpg"></a>
-              <div class="photo-caption">Barcelona</div>
-          </div> 
-
-          <div class="scenic-photo">
-              <a href="images/sunset.jpg"><img src="images/sunset.jpg"></a>
-              <div class="photo-caption">Sunset over the Baltic Sea</div>
-          </div> 
-
-          <div class="scenic-photo">
-              <a href="images/California.jpg"><img src="images/California.jpg"></a>
-              <div class="photo-caption">Palm Desert, California</div>
-          </div> 
-
-           <div class="scenic-photo">
-              <a href="images/rome.jpg"><img src="images/rome.jpg"></a>
-              <div class="photo-caption">Colosseum, Rome</div>
-          </div>
-
-          <div class="scenic-photo">
-              <a href="images/stpetersburg.jpg"><img src="images/stpetersburg.jpg"></a>
-              <div class="photo-caption">Peterhof Palace, St Petersburg</div>
-          </div> 
-      </div>
-
-      <br/><br/>
-
+    <div id="content">  
       <div id="projects">
           <p class="section-header"><b>Projects and Community Engagement</b></p>
           <ul>
