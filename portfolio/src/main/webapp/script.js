@@ -91,7 +91,7 @@ function initMap() {
     const map = new google.maps.Map(
           document.getElementById('map'),
           {center: {lat: 14.5994, lng: -28.67}, zoom: 2});
-    setLandmarks(map, locations);
+    setLandmarks(map, locations); 
   });
 }
 
@@ -107,10 +107,25 @@ function setLandmarks(map, locations) {
 
         // add info window containing a picture if image src is specified
         if(location.image) {
-            const infoWindow = new google.maps.InfoWindow({content: location.image});
-            locationMarker.addListener('click', () => {
-                infoWindow.open(map, locationMarker);
-            });
+            var test = location.image.substring(0, 3);
+            var isPath = test == "img";
+            if (isPath) {
+                var imgPath = "<" + location.image + ">";
+                const infoWindow = new google.maps.InfoWindow({content: imgPath});
+                locationMarker.addListener('click', () => {
+                    map.setZoom(5);
+                    map.setCenter(locationMarker.getPosition());
+                    infoWindow.open(map, locationMarker);
+                });
+            }
+            else {
+                const infoWindow = new google.maps.InfoWindow({content: location.image});
+                locationMarker.addListener('click', () => {
+                    map.setZoom(5);
+                    map.setCenter(locationMarker.getPosition());
+                    infoWindow.open(map, locationMarker);
+                });
+            }
         }
     });
 }

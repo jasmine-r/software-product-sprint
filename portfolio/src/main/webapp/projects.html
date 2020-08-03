@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js"></script>
   </head>
-  <body onload="loadComments()">
+  <body >
 
     <div id="nav-bar" class="side-nav-bar">
         <a href="#" class="close-button" onclick="minimizeNavBar()"> &times; </a>
@@ -29,29 +29,78 @@
     </div>
 
     <div id="content">
-        <div id="projects">
+        <div id="books">
           <p class="section-header"><b>Projects and Community Engagement</b></p>
-          <ul>
-              <li><b>International Space Settlement Design Competition (ISSDC)</b>: <br>
-              ISSDC is an aerospace engineering competition designed for high school students.  
-              I collaborated with 6 team members on an extra-curricular project where we considered all 
-              the logistics (structural and operational considerations) to design a space settlement on Mars.
-               Our team qualified for the final round of the competition hosted by NASA at the Kennedy Space Center in Florida.
-              </li><br>
-              
-              <li><b>Computer Science Peer Tutoring</b>: <br>
-              I have been volunteering as a Computer Science peer tutor in the Faculty of Applied Sciences at my university. 
-              As part of this role, I'm also involved in promoting STEM outreach and engagement for 
-              students who may be interested in exploring the field.
-              </li><br>
-              
-              <li><b>Wish Youth Network Society</b>: <br>
-              I have volunteered with Wish Youth Network Society (WYNS). 
-              WYNS is a non-profit organization which strives to support youth with serious medical conditions. 
-              </li>
+          <ul class="proj-cols" data-columns="4">
+            <div id="rounded_proj_elem">
+                <li class="proj_elem"><i class="fa fa-heartbeat"></i><b> CRADLE platform</b><br/>
+                    Collaborated with 7 team members to develop a web and mobile application 
+                    which work in conjunction with a portable vital signs alert device to help monitor patient vitals in refugee settlements
+                </li>
+            </div>
+            <div id="rounded_proj_elem">
+                <li class="proj_elem"><i class="fa fa-clock-o"></i><b> Super Annoying Alarm Clock</b><br/>
+                    Collaborated with 2 students to develop an alarm clock which progressively gets louder when no motion <br>
+                    is detected from the user. <br/>
+                    Tools: BeagleBone, Zen Cape, Motion Sensor, 
+                    <br>LED display, Pico TTS engine
+                </li>
+            </div>
+            <div id="rounded_proj_elem">
+                <li class="proj_elem"><i class="fa fa-puzzle-piece"></i><b> Wudoku</b><br/>
+                    Collaborated with 3 students to develop an Android application to support language learning. 
+                    The application offers a twist on traditional Sudoku puzzles - word Sudoku <br>
+                    to practice language skills. 
+                </li>
+            </div>
+            <div id="rounded_proj_elem">
+                <li class="proj_elem"><i class="fa fa-rocket"></i><b> International Space Settlement <br> Design Competition (ISSDC)</b>: <br>
+                    ISSDC is an aerospace engineering competition designed <br>
+                    for high school students. I collaborated with 6 team <br>
+                    members on an extra-curricular project where we <br>
+                    considered all the logistics (structural and operational <br>
+                    considerations) to design a space settlement on Mars. <br>
+                    Our team qualified for the final round of the <br>
+                    competition hosted by NASA at the <br>
+                    Kennedy Space Center in Florida.
+                </li>
+            </div>
           </ul>
-      </div>
+
+          <br><br>
+          <!-- next row of project elements -->
+          <div id="books">
+            <ul class="proj2-cols" data-columns="3">
+                <div id="rounded_proj2_elem">
+                    <li class="proj_elem"><i class="fa fa-group"></i><b> Computer Science Peer Tutoring</b>: <br>
+                        I have been volunteering as a Computer Science peer tutor <br>
+                         in the Faculty of Applied Sciences at my university. <br>
+                        As part of this role, I'm also involved in promoting STEM outreach 
+                        and engagement for students who may be interested 
+                        in exploring the field.
+                    </li>
+                </div>
+                 <div id="rounded_proj2_elem">
+                    <li class="proj_elem"><i class="fa fa-google"></i><b> Google Software Product Sprint</b>: <br>
+                        Practicing Data Structures & Algorithm skills, building and developing web apps, and engaging in career development activities.
+                    </li>
+                </div>
+                <div id="rounded_proj2_elem">
+                    <li class="proj_elem"><i class="fa fa-star"></i><b>Wish Youth Network Society</b>: <br>
+                        I have volunteered with Wish Youth Network Society (WYNS).
+                        WYNS is a non-profit organization which strives to 
+                        support youth with serious medical conditions. 
+                    </li>
+                </div>
+            </ul>
+          </div>
+          <!-- CONTENT ENDS HERE -->
+          
+
+        </div>
     </div>
+ 
+       
     <br/><br/><br/>
   </body>
 </html>

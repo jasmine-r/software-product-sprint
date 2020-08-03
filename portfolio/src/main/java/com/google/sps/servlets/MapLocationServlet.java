@@ -3,6 +3,7 @@ package com.google.sps.servlets;
 import com.google.sps.data.Location;
 
 import com.google.gson.Gson;
+import java.util.Scanner;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -31,6 +32,7 @@ public class MapLocationServlet extends HttpServlet {
     public void init() {
         locations = new ArrayList<>();
         // hardcoded data -- TODO: revisit CSV idea 
+        /*
         locations.add(new Location("Amsterdam", 52.3791, 4.89943, "<img src='/images/amsterdam.jpg'>"));
         locations.add(new Location("Barcelona", 41.3902, 2.154, "<img src='/images/barcelona.jpg'>"));
         locations.add(new Location("Berlin", 52.52, 13.405, "<img src='/images/berlin.jpg'>"));
@@ -40,7 +42,18 @@ public class MapLocationServlet extends HttpServlet {
         locations.add(new Location("Paris", 48.8566, 2.3522, ""));
         locations.add(new Location("Rome", 41.9028, 12.4964, "<img src='/images/rome.jpg'>"));
         locations.add(new Location("St. Petersburg", 59.9311, 30.3609, "<img src='/images/stpetersburg.jpg'>"));
-        locations.add(new Location("Tallinn", 59.437, 24.7536, "<img src='/images/estonia.jpg'>"));
+        locations.add(new Location("Tallinn", 59.437, 24.7536, "<img src='/images/estonia.jpg'>"));*/
+        Scanner scanner = new Scanner(getServletContext().getResourceAsStream("/WEB-INF/travels.csv"));
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            String[] cells = line.split(",");
+            String city = cells[0];
+            double lat = Double.parseDouble(cells[1]);
+            double lng = Double.parseDouble(cells[2]);
+            String path = cells[3];
+            locations.add(new Location(city, lat, lng, path));
+        }
+        scanner.close();
     }
 
     @Override

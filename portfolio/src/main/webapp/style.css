@@ -116,14 +116,16 @@ p.section-header {
 }
 
 #content {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  padding: 0;
+  /*margin-left: auto;
+  margin-right: auto;*/
   display: flex;
   background: #b1d6b8;
   align-items: center;
   justify-content: center;
   font-family: "Karma";
-  padding: 15px;
+  /*padding: 15px;*/
 }
 
 #profile-links {
@@ -197,14 +199,68 @@ img {
 }
 
 /* projects & community engagement */
+/*#projects {
+    margin: 30px; 
+}*/
+
+#rounded_proj_elem {
+    border-radius: 50%;
+    display: flex;
+    height: 405px;
+    width: 425px;
+    margin-right: 35px;
+    background: mediumseagreen;
+    justify-content: center;
+    align-items: center;
+}
+
+.proj-elem {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 170px; 
+}
+
+.proj-cols {
+    list-style-type: none;
+    column-count: 4;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.proj2-cols {
+    list-style-type: none;
+    column-count: 3;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#rounded_proj2_elem {
+    border-radius: 50%;
+    display: flex;
+    height: 405px;
+    width: 425px;
+    margin-right: 20px;
+    background: mediumseagreen;
+    justify-content: center;
+    align-items: center;
+}
+
 #projects {
-    margin: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* books */
 #books {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    /*margin-top: 50px;
+    margin-bottom: 50px;*/
+    margin: 20px;
 }
 
 .book-elem {
